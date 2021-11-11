@@ -46,13 +46,7 @@ static BOOL is_valid_application(void) {
     return YES;
   }
 
-  for (NSString* bundleID in ignored_application_bundle_ids) {
-    if ([bundleID isEqualToString:front_app_bundleID]) {
-      return NO;
-    }
-  }
-
-  return YES;
+  return ![ignored_application_bundle_ids containsObject:front_app_bundleID];
 }
 
 static CGEventRef SBFMouseCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef event, void *refcon) {
