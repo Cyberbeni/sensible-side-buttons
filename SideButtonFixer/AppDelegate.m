@@ -158,7 +158,11 @@ typedef NS_ENUM(NSInteger, MenuItem) {
 
   // MARK: - setup globals
 
-  ignored_application_bundle_ids = [NSArray arrayWithObject: @"com.microsoft.VSCode"];
+  ignored_application_bundle_ids = @[
+    @"com.microsoft.VSCode",
+    @"com.google.Chrome",
+    @"com.microsoft.edgemac",
+  ];
 
 
   swipeInfo = [NSMutableDictionary dictionary];
