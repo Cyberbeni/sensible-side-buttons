@@ -46,13 +46,7 @@ static BOOL is_valid_application(void) {
     return YES;
   }
 
-  for (NSString* bundleID in ignored_application_bundle_ids) {
-    if ([bundleID isEqualToString:front_app_bundleID]) {
-      return NO;
-    }
-  }
-
-  return YES;
+  return ![ignored_application_bundle_ids containsObject:front_app_bundleID];
 }
 
 static CGEventRef SBFMouseCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef event, void *refcon) {
@@ -158,7 +152,11 @@ typedef NS_ENUM(NSInteger, MenuItem) {
 
   // MARK: - setup globals
 
-  ignored_application_bundle_ids = [NSArray arrayWithObject: @"com.microsoft.VSCode"];
+  ignored_application_bundle_ids = @[
+    @"com.microsoft.VSCode",
+    @"com.google.Chrome",
+    @"com.microsoft.edgemac",
+  ];
 
 
   swipeInfo = [NSMutableDictionary dictionary];
