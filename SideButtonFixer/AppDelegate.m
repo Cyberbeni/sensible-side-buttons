@@ -156,6 +156,7 @@ typedef NS_ENUM(NSInteger, MenuItem) {
     @"com.microsoft.VSCode",
     @"com.google.Chrome",
     @"com.microsoft.edgemac",
+    @"com.tinyspeck.slackmacgap",
   ];
 
 
