@@ -154,6 +154,7 @@ typedef NS_ENUM(NSInteger, MenuItem) {
 
   ignored_application_bundle_ids = @[
     @"com.microsoft.VSCode",
+    @"com.vscodium",
     @"com.google.Chrome",
     @"com.microsoft.edgemac",
     @"com.tinyspeck.slackmacgap",
